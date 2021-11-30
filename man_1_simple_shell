@@ -1,0 +1,75 @@
+.\" This file is the Manpage for simple shell
+.\" You may distribute it under the terms of the GNU General
+.\" Public License. It comes with NO WARRANTY.
+
+.TH man_1_simple_shell 1 "28 november 2021" "version 1.0" "simple_shell man page"
+.SH NAME
+.B simple_shell - command line interpreter.
+.SH SYNOPSIS
+.B #include "shell.h"
+.IP
+.B ./hsh
+
+.SH DESCRIPTION
+This simple_shell project is a command line interpreter.
+This shell is made for an educational proposition, but includes
+the basic functionality of a traditional Unix-like command-line
+user interface.
+The standard functions and system calls used in simple_shell include:
+.B execve,
+.B exit,
+.B fork,
+.B free,
+.B _getline,
+.B malloc,
+.B perror,
+.B _strtok,
+.B wait,
+.B write.
+
+particularly this project was designed to be executed in the Linux environment.
+
+Compile simple_shell with the flags:
+.P
+.RS
+.B $ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+.P
+.RE
+
+.SH OPTIONS
+
+simple_shell can be run in interactive mode by typing the following command.
+.P
+.RS
+.B $ ./hsh
+.P
+.RE
+
+simple_shell can be run in non-interactive mode by using shell scripts, using pipes ('|'):
+.P
+.RS
+.B echo 'ls' | ./hsh
+
+.SH EXAMPLES
+$  /bin/ls -l
+
+
+$  ls -l
+
+
+.SH BUILTINS
+
+The following builtin commands are:
+
+.IT
+.B exit
+- exits the program.
+
+.B cd
+- change directory.
+
+.B history
+- shows all the commands previously typed in the command line.
+
+.SH AUTHORS
+Pether tejada, Error-rgl.
