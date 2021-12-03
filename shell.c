@@ -3,25 +3,25 @@
  * main - handle commants of own shell
  * @argv: number of elements
  * @argc: array of elements
- * @enviroment: env variable
+ * @env: env variable
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv, char **env)
 {
-	char *buffer;
-	size_t bufsize = 32;
-	size_t characters;
+	char *buffer = NULL;
+	size_t bufsize;
+	int i = 0;
+	char *prompt = "(bruno)~linux $";
 
-	buffer = (char *)malloc(bufsize * sizeof(char));
-	if( buffer == NULL)
-    {
-        perror("Unable to allocate buffer");
-        exit(1);
-    }
+	char getl;
 
-	printf("$ ");
-	characters = getline(&buffer, &bufsize, stdin);
-	
-	
+	while (getl != -1)
+	{
+		printf("%s", prompt);
+		getl = (getline(&(buffer), &bufsize, stdin));
+		tokens(buffer, env);
+		buffer = NULL;
+	}
+
 	return (0);
 }
