@@ -7,7 +7,7 @@
 int salida(char **tokens)
 {
 	int num;
-	
+
 	num = atoi(tokens[1]);
 	printf("%d\n", num);
 	exit(num);
