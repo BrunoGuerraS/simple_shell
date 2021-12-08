@@ -17,22 +17,15 @@ from standard input.
 
 | File | Description |
 |--|--|
-| **man_1_simple_shell** | It is the manual for using the shell. Contains a
-description, ways for invocation, and some examples of builtins and executables
-that can be used inside the command line interpreter. |
-| **shell.c** | It contains the entry point of the program, where the execution
-begins. It shows the prompt and receives the characters written in the command line. |
-| **main.h** |  It is a header file that contains all the c libraries needed for
-the program, the description and prototypes of all the functions, structures,
-builtins,and  printing functions. |
-| **handler.c** | It compare the command with a list of builtins, and if there
-is a match, It calls the associated builtin. |
-| **tokenize.c** | Save the separate string. it was separated using a delimiter
-designed to analyze them later. |
+| **man_1_simple_shell** | It is the manual for using the shell. Contains a description, ways for invocation, and some examples of builtins and executables that can be used inside the command line interpreter. |
+| **shell.c** | It contains the entry point of the program, where the execution begins. It shows the prompt and receives the characters written in the command line. |
+| **main.h** |  It is a header file that contains all the c libraries needed for the program, the description and prototypes of all the functions, structures, builtins,and  printing functions. |
+| **handler.c** | It compare the command with a list of builtins, and if there is a match, It calls the associated builtin. |
+| **tokenize.c** | Save the separate string. it was separated using a delimiter designed to analyze them later. |
 | **_exit.c** | allows the end of the program in a controlled way, controller output. |
 
 
-### Compilation
+## Compilation
 
 Usage: **hsh**
 hsh is started with the standard input connected to the terminal. To start, compile all .c located in this repository by using this command:
@@ -40,7 +33,7 @@ hsh is started with the standard input connected to the terminal. To start, comp
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 ```
-### Example to use it
+## Example to use it
 
 Usage: **hsh**
 ```c
@@ -48,7 +41,7 @@ simple_shell$ ./hsh
 linux~$
 
 linux~$ ls
-README.md shell.c main.h tok...
+README.md shell.c main.h tokens.c ...
 
 linux~$ exit
 simple_shell$
