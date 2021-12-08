@@ -4,6 +4,20 @@
 This repository contains our own simple version of the shell
 which is a simple UNIX shell based on bash and Sh.
 
-# Vision general
+# General
 it is an application that emulates a shell in two modes
 interactive and ...
+
+## List of comands you can use
+
+| commands    |
+| :----------------- |
+| `ls` |
+| `pwd` |
+| `touch` |
+| `rm` |
+| `mkdir` |
+| `tocuh` |
+| `rmdir` |
+| `cd` |
+| `exit` |
