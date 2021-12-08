@@ -21,3 +21,5 @@ interactive and ...
 | `rmdir` |
 | `cd` |
 | `exit` |
+| `cat` |
+
