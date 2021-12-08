@@ -61,24 +61,15 @@ simple_shell$
 | Commands | Description |
 |--|--|
 | `ls` | ls (from list), allows you to list the contents of a directory or file. |
-| `pwd` | Pwd (from print working directory) is a convenient command that prints our
-path or location when executed, so we avoid getting lost if we are working with
-multiple directories and folders. |
-| `touch` | touch creates an empty file, if the file exists it updates the
-modification time. |
+| `pwd` | Pwd (from print working directory) is a convenient command that prints our path or location when executed, so we avoid getting lost if we are working with multiple directories and folders. |
+| `touch` | touch creates an empty file, if the file exists it updates the modification time. |
 | `rm` | rm (from remove) is the command needed to delete a file or directory. |
-| `mkdir` | mkdir (from make directory) creates a new directory taking into
-account the current location. |
-| `cp` | cp (from copy) copies a source file or directory to a target file
-or directory. |
-| `rmdir` | rmdir (from ReMove DIRectory) This command is used to delete
-empty directories or subdirectories. |
-| `cd` | cd (from change directory) you will need this command to access a path other
-than the one you are in. basically it is for navigating from directory to directory. |
-| `exit` | exits the current shell. 0 status value indicates successful execution,
-another value represents unsuccessful execution. |
-| `cat` | cat (from concatenate), is a wonderful utility that allows us to visualize
-the content of a text file in the standard output, without the need of an editor. |
+| `mkdir` | mkdir (from make directory) creates a new directory taking into account the current location. |
+| `cp` | cp (from copy) copies a source file or directory to a target fileor directory. |
+| `rmdir` | rmdir (from ReMove DIRectory) This command is used to delete empty directories or subdirectories. |
+| `cd` | cd (from change directory) you will need this command to access a path other than the one you are in. basically it is for navigating from directory to directory. |
+| `exit` | exits the current shell. 0 status value indicates successful execution, another value represents unsuccessful execution. |
+| `cat` | cat (from concatenate), is a wonderful utility that allows us to visualize the content of a text file in the standard output, without the need of an editor. |
 
 ## Authors
 
