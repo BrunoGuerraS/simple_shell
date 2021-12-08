@@ -10,15 +10,16 @@ int main(int argc, char **argv, char **env)
 {
 	int getl;
 	size_t bufsize = 0;
-	char *prompt = "(bruno)~linux $";
+	/*char *prompt = "(bruno)~linux $";*/
 	char *buffer = NULL;
-
+	/*hacer un error con el argv[0]*/
 	(void)argc;
 	(void)argv;
 
 	while (getl != -1)
 	{
-		printf("%s", prompt);
+		if (isatty(STDIN_FILENO))
+			write(1, "(bruno)~linux $", 15); 
 		getl = (getline(&(buffer), &bufsize, stdin));
 		if (getl <= 1)
 			continue;
@@ -29,3 +30,4 @@ int main(int argc, char **argv, char **env)
 	free(buffer);
 	return (0);
 }
+
