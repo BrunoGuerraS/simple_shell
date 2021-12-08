@@ -8,20 +8,24 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	char *buffer = NULL;
-	size_t bufsize;
-	int i = 0;
+	int getl;
+	size_t bufsize = 0;
 	char *prompt = "(bruno)~linux $";
+	char *buffer = NULL;
 
-	char getl;
+	(void)argc;
+	(void)argv;
 
 	while (getl != -1)
 	{
 		printf("%s", prompt);
 		getl = (getline(&(buffer), &bufsize, stdin));
+		if (getl <= 1)
+			continue;
 		tokens(buffer, env);
+		free(buffer);
 		buffer = NULL;
 	}
-
+	free(buffer);
 	return (0);
 }
