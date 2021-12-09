@@ -30,4 +30,7 @@ int cd(char **tokens);
 int (*handle(char *tokens))(char **);
 int salida(char **tokens);
 
+int signal_sh(void);
+void trapper(int);
+void _trim(char **str);
 #endif
