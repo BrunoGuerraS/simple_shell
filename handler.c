@@ -26,3 +26,14 @@ int (*handle(char *tokens))(char **token)
 	}
 	return (0);
 }
+
+/**
+ * trapper - signal functions
+ * @sig: input int.
+ * Return: no return.
+ */
+void trapper(int sig)
+{
+	(void)sig;
+	write(1, "\nlinux~$ ", 9);
+}
