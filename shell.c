@@ -8,7 +8,7 @@
  */
 int main(int argc, char **argv, char **env)
 {
-	int getl;
+	int getl = 0;
 	size_t bufsize = 0;
 	/*char *prompt = "linux $";*/
 	char *buffer = NULL;
@@ -19,11 +19,11 @@ int main(int argc, char **argv, char **env)
 	while (getl != -1)
 	{
 		if (isatty(STDIN_FILENO))
-			write(1, "linux~$ ", 15);
+			write(1, "hello-linux~$ ", 14);
 		getl = (getline(&(buffer), &bufsize, stdin));
 		if (getl == EOF)
 			break;
-		trim(&buffer);
+		_trim(&buffer);
 
 		if (getl <= 1)
 		{
