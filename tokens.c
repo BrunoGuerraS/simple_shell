@@ -42,8 +42,9 @@ int tokens(char *buffer, char **env)
 		}
 		else
 		{
-			printf("shell say command not found: %s\n", savetoken);
+			printf("hsh:-> %s : command not found\n", savetoken);
 		}
+		free(tokens);
 	}
 	return (0);
 }
