@@ -6,11 +6,13 @@
 .SH NAME
 .B simple_shell - command line interpreter.
 .SH SYNOPSIS
-.B #include "shell.h"
+.B #include "main.h"
 .IP
+.B Usage: hsh
 .B ./hsh
 
 .SH DESCRIPTION
+
 This simple_shell project is a command line interpreter.
 This shell is made for an educational proposition, but includes
 the basic functionality of a traditional Unix-like command-line
@@ -25,7 +27,8 @@ The standard functions and system calls used in simple_shell include:
 .B perror,
 .B _strtok,
 .B wait,
-.B write.
+.B write,
+.B getcwd.
 
 particularly this project was designed to be executed in the Linux environment.
 
@@ -51,14 +54,18 @@ simple_shell can be run in non-interactive mode by using shell scripts, using pi
 .B echo 'ls' | ./hsh
 
 .SH EXAMPLES
-$  /bin/ls -l
+linux~$  /bin/ls -l
 
 
-$  ls -l
+linux~$  ls -l
 
 
-.SH BUILTINS
+.SH BUILTINS COMMANDS
 
+Read and execute commands from filename in the current shell environment
+and return the exit status of the last command executed from filename.
+If filename does not contain a slash,
+file names in PATH are used to find the directory containing filename.
 The following builtin commands are:
 
 .IT
@@ -68,8 +75,6 @@ The following builtin commands are:
 .B cd
 - change directory.
 
-.B history
-- shows all the commands previously typed in the command line.
 
 .SH AUTHORS
-Bruno Guerra, Error-rgl.
+Bruno Guerra, error.
