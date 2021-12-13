@@ -65,7 +65,7 @@ While running in interactive mode, **hsh** ignores the keyboard input ctrl+c. Al
 
 User hits ctrl+d in the foutrh command.
 ```
-$ ./sodash
+$ ./hsh
 linux~$ ^C
 linux~$ ^C
 linux~$ 
@@ -82,7 +82,7 @@ $ ./hsh myfile
 $
 ```
 ```
-$ echo "echo $?" | ./sodash
+$ echo "echo $?" | ./hsh
 0
 ```
 
@@ -102,7 +102,7 @@ $ echo "echo $HOME" | ./hsh
 The current working directory as set by the **cd** command.
 
 ```
-$ echo "echo $PWD" | ./sodash
+$ echo "echo $PWD" | ./hsh
 /home/vagrant/c16/simple_shell
 ```
 
@@ -124,5 +124,5 @@ $ echo "echo $PWD" | ./sodash
 ## Authors
 
 * **Bruno G.:** [GitHub](https://github.com/BrunoGuerraS)
-* **error :** [Not Found] (#)
+* **Rogelio :** [Not Found] (#)
 
