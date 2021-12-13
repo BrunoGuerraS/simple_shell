@@ -2,7 +2,7 @@
 .\" You may distribute it under the terms of the GNU General
 .\" Public License. It comes with NO WARRANTY.
 
-.TH man_1_simple_shell 1 "28 november 2021" "version 1.0" "simple_shell man page"
+.TH man_1_simple_shell 1 "version 1.0" "simple_shell man page" "28 november 2021"
 .SH NAME
 .B simple_shell - command line interpreter.
 .SH SYNOPSIS
@@ -47,17 +47,32 @@ simple_shell can be run in interactive mode by typing the following command.
 .B $ ./hsh
 .P
 .RE
+Examples
+.P
+.RS
+.B $ ./hsh
+.P
+.B linux~$ pwd
+.P
+.B /home/vagrant/c16/simple_shell
+.B
+.P
+.RE
 
 simple_shell can be run in non-interactive mode by using shell scripts, using pipes ('|'):
 .P
 .RS
 .B echo 'ls' | ./hsh
-
-.SH EXAMPLES
-linux~$  /bin/ls -l
-
-
-linux~$  ls -l
+.P
+.RE
+EXAMPLES
+.P
+.RS
+.B $ echo "echo $HOME" | ./hsh
+.P
+.B   /home/vagrant
+.P
+.RE
 
 
 .SH BUILTINS COMMANDS
@@ -69,12 +84,41 @@ file names in PATH are used to find the directory containing filename.
 The following builtin commands are:
 
 .IT
+.B HOME 
+- The home directory of the current user and the default directory argument for the cd builtin command.
+
 .B exit
 - exits the program.
 
 .B cd
 - change directory.
 
+.B env
+- Print environment.
+The env command will be print a complete list of enviroment variables.
+
+
+.SH COMMAND EXECUTION ENVIROMENT
+The shell has an execution environment, which consists of the following:
+
+- open files inherited by the shell at invocation,
+as modified by redirections supplied to the exec builtin.
+
+- the current working directory as set by cd, pushd, or popd,
+or inherited by the shell at invocation.
+
+.SH SIGNALS
+When bash is interactive, in the absence of any traps,
+it ignores SIGTERM (so that kill 0 does not kill an interactive shell),
+and SIGINT is caught and handled (so that the wait builtin is interruptible).
+In all cases, bash ignores SIGQUIT.
+If job control is in effect, bash ignores SIGTTIN, SIGTTOU, and SIGTSTP.
+
+.SH PROMPTING
+When executing interactively, bash displays the primary prompt PS1
+when it is ready to read a command,
+and the secondary prompt PS2 when it needs more input to complete a command.
+
 
 .SH AUTHORS
-Bruno Guerra, error.
+Bruno Guerra, rogelio.
