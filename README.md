@@ -33,7 +33,11 @@ hsh is started with the standard input connected to the terminal. To start, comp
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 ```
-## Example to use it
+hsh is allowed to be invoked interactively and non-interactively.
+
+When hsh is invoked with standard input connected to a terminal (determined by isatty(3), the interactive mode is opened.
+
+## Example to use it 
 
 Usage: **hsh**
 ```c
@@ -46,8 +50,61 @@ README.md shell.c main.h tokens.c ...
 linux~$ exit
 simple_shell$
 ````
+Example:
+```
+$ ./hsh
+linux~$ pwd
+/home/vagrant/c16/simple_shell
+
+```
 
 
+### Signals
+
+While running in interactive mode, **hsh** ignores the keyboard input ctrl+c. Alternatively, an input of End-Of-File ctrl+d will exit the program.
+
+User hits ctrl+d in the foutrh command.
+```
+$ ./sodash
+linux~$ ^C
+linux~$ ^C
+linux~$ 
+```
+
+If hsh is invoked with standard input not connected to a terminal, it reads and executes received commands in order. (non-interactively).
+
+## Example to use it 
+```
+$ cat myfile
+echo 'hello holberton'
+$ ./hsh myfile
+'holberton'
+$
+```
+```
+$ echo "echo $?" | ./sodash
+0
+```
+
+### Environment
+
+Upon invocation, **hsh** receives and copies the environment of the parent process in which it was executed. This environment is an array of *name-value* strings describing variables in the format *NAME=VALUE*. A few key environmental variables are:
+
+#### HOME
+The home directory of the current user and the default directory argument for the **cd** builtin command.
+
+```
+$ echo "echo $HOME" | ./hsh
+/home/vagrant
+```
+
+#### PWD
+The current working directory as set by the **cd** command.
+
+```
+$ echo "echo $PWD" | ./sodash
+/home/vagrant/c16/simple_shell
+```
 
 ## List of comands you can use
 
