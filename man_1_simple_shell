@@ -6,9 +6,9 @@
 .SH NAME
 .B simple_shell - command line interpreter.
 .SH SYNOPSIS
-.B #include "main.h"
-.IP
+.RS
 .B Usage: hsh
+.P
 .B ./hsh
 
 .SH DESCRIPTION
@@ -121,4 +121,4 @@ and the secondary prompt PS2 when it needs more input to complete a command.
 
 
 .SH AUTHORS
-Bruno Guerra, rogelio.
+error, Bruno Guerra.
